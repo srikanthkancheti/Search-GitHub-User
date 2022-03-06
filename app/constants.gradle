@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+// common constants
+final bool = "boolean"
+final string = "String"
+final True = "true"
+final False = "false"
+final END_POINT = "https://api.github.com/"
+
+final IS_PRODUCTION = "IS_PRODUCTION"
+final SSL_DISABLED = "SSL_DISABLED"
+
+android {
+
+  defaultConfig {
+    // common config for all build variants
+    buildConfigField bool, IS_PRODUCTION, False
+    buildConfigField string, "PLATFORM", "\"Android\""
+    buildConfigField string, "ENDPOINT", "\"$END_POINT\""
+  }
+
+  productFlavors {
+
+    mobile {
+      buildConfigField bool, SSL_DISABLED, True
+    }
+
+    production {
+      buildConfigField bool, IS_PRODUCTION, True
+      buildConfigField bool, SSL_DISABLED, False
+    }
+  }
+}

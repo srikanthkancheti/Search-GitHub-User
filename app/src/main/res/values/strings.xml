@@ -1,0 +1,18 @@
+<resources>
+  <string name="app_name">Search User</string>
+  <string name="something_wrong">Something wrong happened</string>
+  <string name="error_message_not_found">Bad Request - Your request is missing parameters. Please verify and resubmit.</string>
+  <string name="no_internet_message_main_screen">We can\'t seem to reach you. Check your connection
+    to access your account.
+  </string>
+  <string name="error_not_2xx_or_3xx">Something went wrong, please try again later</string>
+  <string name="hint_search">Search HitHub User</string>
+  <string name="company_name"><![CDATA[<b>Company:</b> %s]]></string>
+  <string name="user_blog_name"><![CDATA[<b>Blog:</b> %s]]></string>
+  <string name="user_location_name"><![CDATA[<b>Location:</b> %s]]></string>
+  <string name="user_public_repos"><![CDATA[<b>Public repositories:</b> %s]]></string>
+  <string name="user_followers_number"><![CDATA[<b>No followers:</b> %s]]></string>
+  <string name="user_following_number"><![CDATA[<b>No following:</b> %s]]></string>
+  <string name="user_bio"><![CDATA[<b>Biodata:</b> %s]]></string>
+  <string name="title_activity_detail">User Details</string>
+</resources>

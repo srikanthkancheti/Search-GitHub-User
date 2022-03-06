@@ -1,0 +1,139 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+// region Dagger dependency required plugin
+apply plugin: 'kotlin-kapt'
+
+// build constants and api keys
+apply from: 'constants.gradle'
+
+android {
+  compileSdkVersion androidConfig.compileSdkVersion
+  buildToolsVersion androidConfig.buildToolsVersion
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+  defaultPublishConfig "mobileDebug"
+
+  defaultConfig {
+    applicationId "android.com.viper"
+    minSdkVersion androidConfig.minSdkVersion
+    targetSdkVersion androidConfig.targetSdkVersion
+    versionCode androidConfig.versionCode
+    versionName androidConfig.versionName
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    multiDexEnabled true
+    dexOptions {
+      javaMaxHeapSize "12g"
+    }
+    vectorDrawables.useSupportLibrary = true
+
+    // enable incremental kapt for dagger
+    javaCompileOptions {
+      annotationProcessorOptions {
+        arguments << [
+            "dagger.gradle.incremental": "true",
+            "room.incremental": "true"
+        ]
+      }
+    }
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      shrinkResources false
+      proguardFiles getDefaultProguardFile('proguard-android.txt')
+    }
+    debug {
+      debuggable true
+      minifyEnabled false
+      shrinkResources false
+      proguardFiles getDefaultProguardFile('proguard-android.txt')
+    }
+  }
+
+  final DIMENSION_ENV = "environment"
+
+  flavorDimensions DIMENSION_ENV
+
+  productFlavors {
+    mobile {
+      dimension DIMENSION_ENV
+      applicationIdSuffix ".mobile"
+      versionNameSuffix "-mobile"
+    }
+    production {
+      dimension DIMENSION_ENV
+    }
+  }
+
+  packagingOptions {
+    exclude 'META-INF/rxjava.properties'
+  }
+
+  lintOptions {
+    enable 'ConvertToWebp'
+    lintConfig file("lint.xml")
+  }
+
+  kapt {
+    generateStubs = true
+  }
+
+  sourceSets {
+    androidTest.setRoot( 'src/test/java' )
+    main.java.srcDirs += 'src/main/kotlin'
+  }
+}
+
+dependencies {
+
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+  implementation "androidx.appcompat:appcompat:${versions.appcompat}"
+  implementation "androidx.core:core-ktx:${versions.androidKtx}"
+  implementation "com.google.android.material:material:${versions.appcompat}"
+  implementation "com.android.support.constraint:constraint-layout:${versions.constraintLayout}"
+
+  implementation "com.dzaitsev.rxviper:rxviper:${versions.rxViper}"
+  compileOnly "javax.annotation:javax.annotation-api:${versions.javaxAnnotationApi}"
+  implementation "com.google.dagger:dagger:${versions.dagger}"
+  kapt "com.google.dagger:dagger-compiler:${versions.dagger}"
+
+  implementation "com.squareup.okhttp3:okhttp:${versions.okhttp}"
+  implementation "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}"
+
+  implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
+  implementation "com.squareup.retrofit2:adapter-rxjava:${versions.retrofit}"
+  implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
+
+  implementation "io.reactivex:rxjava:${versions.rxjava}"
+  implementation "io.reactivex:rxandroid:${versions.rxAndroid}"
+  implementation "io.reactivex.rxjava2:rxandroid:${versions.rxAndroid2}"
+
+  implementation "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
+  implementation "com.tbruyelle.rxpermissions:rxpermissions:${versions.rxPermissions}"
+
+  implementation "com.facebook.stetho:stetho:${versions.stetho}"
+  implementation "com.facebook.stetho:stetho-okhttp3:${versions.stetho}"
+
+  implementation "com.github.bumptech.glide:glide:${versions.glide}"
+  implementation "com.mikhaellopez:circularimageview:${versions.circularImageView}"
+
+  kapt "androidx.room:room-compiler:${versions.room}"
+  implementation "androidx.room:room-runtime:${versions.room}"
+  implementation "androidx.room:room-rxjava2:${versions.room}"
+
+  implementation "androidx.paging:paging-runtime-ktx:${versions.paging_ktx}"
+  implementation "androidx.paging:paging-rxjava2-ktx:${versions.paging_ktx}"
+
+  // Test dependencies
+  testImplementation "junit:junit:${versions.junit}"
+  testImplementation 'org.mockito:mockito-core:2.23.0'
+  testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:${versions.mockitoKotlin}"
+  testImplementation "org.robolectric:robolectric:${versions.robolectric}"
+}

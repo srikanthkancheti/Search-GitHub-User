@@ -1,0 +1,43 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Set the transitions which are used for the entrance and exit of shared elements -->
+        <item name="android:windowSharedElementEnterTransition" tools:ignore="NewApi">
+            @transition/grid_detail_transition
+        </item>
+        <item name="android:windowSharedElementExitTransition" tools:ignore="NewApi">
+            @transition/grid_detail_transition
+        </item>
+    </style>
+
+    <style name="ToolbarButton">
+        <item name="android:layout_width">@dimen/size_48</item>
+        <item name="android:layout_height">@dimen/size_48</item>
+        <item name="android:background">@drawable/toolbar_button_ripple</item>
+    </style>
+
+    <style name="SearchToolbarEditText" parent="AppTheme">
+        <item name="colorAccent">@color/white_FFFFFF</item>
+        <item name="colorControlNormal">@color/white_FFFFFF</item>
+        <item name="colorControlActivated">@color/white_FFFFFF</item>
+        <item name="colorControlHighlight">@color/white_FFFFFF</item>
+        <item name="android:textColorHint">@color/white_transparent_50</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:singleLine">true</item>
+        <item name="editTextBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="SearchToolbarEditText.White">
+        <item name="colorAccent">@color/gunmetal_4B4F56</item>
+        <item name="colorControlHighlight">@color/dodger_blue_3884FF</item>
+        <item name="android:textColorHint">@color/cool_grey_90949C</item>
+        <item name="android:editTextColor">@color/gunmetal_4B4F56</item>
+    </style>
+
+</resources>

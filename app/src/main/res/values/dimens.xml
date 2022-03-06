@@ -1,0 +1,39 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="pin_button_size">80dp</dimen>
+    <dimen name="status_bar_height">24dp</dimen>
+    <dimen name="action_bar_height">48dp</dimen>
+    <dimen name="status_bar_plus_action_bar">72dp</dimen>
+    <dimen name="radius_round_corner_button">@dimen/radius_100</dimen>
+
+    <!--Radius-->
+    <dimen name="radius_100">100dp</dimen>
+    <dimen name="radius_120">120dp</dimen>
+    <dimen name="radius_36">36dp</dimen>
+    <dimen name="radius_12">12dp</dimen>
+    <dimen name="radius_8">8dp</dimen>
+
+    <!--Spacing-->
+    <dimen name="space_2">2dp</dimen>
+    <dimen name="space_3">3dp</dimen>
+    <dimen name="space_4">4dp</dimen>
+    <dimen name="space_8">8dp</dimen>
+
+    <dimen name="size_16">16dp</dimen>
+    <dimen name="size_48">48dp</dimen>
+    <dimen name="margin_6">6dp</dimen>
+
+    <!--text size-->
+    <dimen name="text_size_20">20sp</dimen>
+    <dimen name="text_size_18">18sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_10">10sp</dimen>
+    <dimen name="text_size_12">12sp</dimen>
+
+  <dimen name="cardview_elevation">3dp</dimen>
+  <dimen name="cardview_corner_radius">8dp</dimen>
+  <dimen name="size_avatar_header">300dp</dimen>
+
+</resources>

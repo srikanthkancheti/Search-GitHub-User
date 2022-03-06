@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    tools:context=".ui.home.SearchGitHubActivity">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+  <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/userAvatarImageView"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/size_avatar_header"
+      android:scaleType="centerCrop"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/userCompany"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/space_8"
+      android:ellipsize="end"
+      android:textColor="@color/dodger_blue_3884FF"
+      android:textSize="@dimen/text_size_20"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/userAvatarImageView" />
+
+  <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/userBiodata"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/space_8"
+      android:ellipsize="end"
+      android:textColor="@android:color/black"
+      android:textSize="@dimen/text_size_16"
+      android:textStyle="normal"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/userCompany" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/userBlog"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/space_8"
+      android:ellipsize="end"
+      android:textColor="@android:color/black"
+      android:textSize="@dimen/text_size_16"
+      android:textStyle="normal"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/userBiodata" />
+
+  <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/userLocation"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/space_8"
+      android:ellipsize="end"
+      android:textColor="@android:color/black"
+      android:textSize="@dimen/text_size_16"
+      android:textStyle="normal"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/userBlog" />
+
+  <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/publicRepos"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/space_8"
+      android:ellipsize="end"
+      android:textColor="@android:color/black"
+      android:textSize="@dimen/text_size_16"
+      android:textStyle="normal"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/userLocation" />
+
+  <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/followers"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/space_8"
+      android:ellipsize="end"
+      android:textColor="@android:color/black"
+      android:textSize="@dimen/text_size_16"
+      android:textStyle="normal"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/publicRepos" />
+
+  <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/following"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/space_8"
+      android:ellipsize="end"
+      android:textColor="@android:color/black"
+      android:textSize="@dimen/text_size_16"
+      android:textStyle="normal"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/followers" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:paddingStart="@dimen/size_16"
+    android:background="@drawable/rounder_corner_edittext"
+    android:gravity="center_vertical">
+
+  <androidx.appcompat.widget.AppCompatEditText
+      android:id="@+id/searchEditText"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:imeOptions="actionSearch"
+      android:theme="@style/SearchToolbarEditText.White"
+      android:textCursorDrawable="@null"/>
+
+  <!--Icon of this button looks not really good with ripple background, so we will use no background-->
+  <ImageButton
+      android:id="@+id/searchButton"
+      android:layout_marginStart="@dimen/size_16"
+      app:srcCompat="@drawable/ic_search_dark"
+      android:background="@android:color/transparent"
+      style="@style/ToolbarButton"
+      tools:ignore="ContentDescription"/>
+
+</LinearLayout>
