@@ -52,4 +52,4 @@ It is also worth mentioning that Router is responsible for passing data between 
 * We need to have a device connected through data cable or an Android emulator to run the app
 
 #### To execute the tests
-* Project view -> Search GitHub repositories -> app -> src -> test -> right click and run the tests https://drive.google.com/file/d/1AJFvXGFDePx1VOPqVTn4cl6DkrITGzME/view
+* Project view -> Search GitHub repositories -> app -> src -> test -> right click and run the tests 
